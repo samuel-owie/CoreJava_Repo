@@ -1,10 +1,14 @@
 package com.packages.chapters.chapter05.inheritance;
 
 public class Executive extends Manager{
-    private int SAwards;
+    private double specialAwards;
 
     public Executive(String name, double salary, int year, int month, int day){
         super(name, salary, year, month, day);
-        SAwards = 0;
+        specialAwards = 0;
+    }
+
+    public void setSAwards(double s){
+        specialAwards = s;
     }
 }
