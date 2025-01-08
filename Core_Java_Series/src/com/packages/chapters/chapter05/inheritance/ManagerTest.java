@@ -12,8 +12,8 @@ public class ManagerTest {
         var boss = new Manager("Carl", 80000, 1987, 12, 15);
         boss.setBonus(5000);
 
-        var exectuiveBoss = new Executive("Makin", 120000, 1977, 1, 25);
-        exectuiveBoss.setSAwards(120000);
+        var executiveBoss = new Executive("Makin", 120000, 1977, 1, 25);
+        executiveBoss.setSAwards(120000);
 
         var staff = new Employee[4];
 
@@ -22,6 +22,7 @@ public class ManagerTest {
         staff[0] = boss;
         staff[1] = new Employee("Harry", 50000, 1989, 10, 1);
         staff[2] = new Employee("Tommy", 40000, 1990, 3, 15);
+        staff[3] = executiveBoss;
 
         // Print out information about all Employee Objects
         for(Employee e : staff){
