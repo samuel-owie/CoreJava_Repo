@@ -12,7 +12,10 @@ public class ManagerTest {
         var boss = new Manager("Carl", 80000, 1987, 12, 15);
         boss.setBonus(5000);
 
-        var staff = new Employee[3];
+        var exectuiveBoss = new Executive("Makin", 120000, 1977, 1, 25);
+        exectuiveBoss.setSAwards(120000);
+
+        var staff = new Employee[4];
 
         // Fill the staff array with Manager and Employee objects
 
