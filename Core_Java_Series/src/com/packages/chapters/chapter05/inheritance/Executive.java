@@ -8,6 +8,10 @@ public class Executive extends Manager{
         specialAwards = 0;
     }
 
+    public double geSalary(){
+        double baseSalary = super.getSalary();
+        return baseSalary + specialAwards;
+    }
     public void setSAwards(double s){
         specialAwards = s;
     }
