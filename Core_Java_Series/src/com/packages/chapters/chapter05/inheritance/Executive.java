@@ -1,6 +1,6 @@
 package com.packages.chapters.chapter05.inheritance;
 
-public class Executive extends Manager{
+public final class Executive extends Manager{
     private double specialAwards;
 
     public Executive(String name, double salary, int year, int month, int day){
