@@ -10,10 +10,13 @@ public final class Executive extends Manager{
 
     public double geSalary(){
         double baseSalary = super.getSalary();
-        System.out.println(specialAwards);
         return baseSalary + specialAwards;
     }
     public void setSAwards(double s){
         specialAwards = s;
+    }
+
+    public double getSAwards(){
+        return specialAwards;
     }
 }
