@@ -27,7 +27,7 @@ public class ManagerTest {
         // Print out information about all Employee Objects
         for(Employee e : staff){
             System.out.println("name= " + e.getName() + ", salary= " + e.getSalary());
-            System.out.println(executiveBoss.getSAwards());
+            //System.out.println(executiveBoss.getSAwards());
         }
 
     }

@@ -8,7 +8,7 @@ public final class Executive extends Manager{
         specialAwards = 0;
     }
 
-    public double geSalary(){
+    public double getSalary(){
         double baseSalary = super.getSalary();
         return baseSalary + specialAwards;
     }
