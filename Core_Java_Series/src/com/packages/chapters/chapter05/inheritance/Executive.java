@@ -12,6 +12,7 @@ public final class Executive extends Manager{
         double baseSalary = super.getSalary();
         return baseSalary + specialAwards;
     }
+
     public void setSAwards(double s){
         specialAwards = s;
     }
