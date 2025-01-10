@@ -31,6 +31,6 @@ public class ManagerTest {
             //System.out.println(executiveBoss.getSAwards());
         }
 
-        System.out.println(System.out);
+        //System.out.println(System.out);
     }
 }
