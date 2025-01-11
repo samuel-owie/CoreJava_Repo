@@ -1,33 +1,30 @@
-package com.packages.chapters.chapter05.sealed.working;
+package com.packages.chapters.chapter05.sealed.gpt;
 
 import java.util.*;
 
 sealed interface JSONValue permits JSONArray, JSONObject, JSONPrimitive {
 
-    public default String type(){
-        if(this instanceof JSONArray) return "array";
-        else if(this instanceof JSONObject) return "object";
-        else if(this instanceof JSONNumber) return "number";
-        else if(this instanceof JSONString) return "string";
-        else if(this instanceof JSONBoolean) return "boolean";
+    public default String type() {
+        if (this instanceof JSONArray) return "array";
+        else if (this instanceof JSONObject) return "object";
+        else if (this instanceof JSONNumber) return "number";
+        else if (this instanceof JSONString) return "string";
+        else if (this instanceof JSONBoolean) return "boolean";
         else return "null";
     }
 }
 
-final class JSONArray extends ArrayList<JSONValue> implements JSONValue{}
+final class JSONArray extends ArrayList<JSONValue> implements JSONValue {}
 
 final class JSONObject extends HashMap<String, JSONValue> implements JSONValue {
-    public String toString(){
+    public String toString() {
         StringBuilder result = new StringBuilder();
         result.append("{");
-        for(Map.Entry<String, JSONValue> entry : entrySet()){
-            if(result.length() > 1) result.append(",");
-            result.append(" \"");
-            result.append(entry.getKey());
-            result.append("\": ");
-            result.append(entry.getValue());
+        for (Map.Entry<String, JSONValue> entry : entrySet()) {
+            if (result.length() > 1) result.append(",");
+            result.append(" \"").append(entry.getKey()).append("\": ").append(entry.getValue());
         }
-        result.append(" } ");
+        result.append(" }");
         return result.toString();
     }
 }
@@ -35,25 +32,25 @@ final class JSONObject extends HashMap<String, JSONValue> implements JSONValue {
 sealed interface JSONPrimitive extends JSONValue permits JSONNumber, JSONString, JSONBoolean, JSONNull {}
 
 final record JSONNumber(double value) implements JSONPrimitive {
-    public String toString() {return "" + value;}
+    public String toString() { return "" + value; }
 }
 
 final record JSONString(String value) implements JSONPrimitive {
-    public String toString() {return "\"" + value.translateEscapes() + "\"";}
+    public String toString() { return "\"" + value + "\""; }
 }
 
 enum JSONBoolean implements JSONPrimitive {
     FALSE, TRUE;
-    public String toString() { return super.toString().toLowerCase();}
+    public String toString() { return super.toString().toLowerCase(); }
 }
 
 enum JSONNull implements JSONPrimitive {
     INSTANCE;
-    public String toString() { return "null";}
+    public String toString() { return "null"; }
 }
 
-public class SealedTest {
-    public static void main(String[] args){
+public class GPT {
+    public static void main(String[] args) {
         JSONObject obj = new JSONObject();
         obj.put("name", new JSONString("Harry"));
         obj.put("salary", new JSONNumber(90000));
