@@ -18,5 +18,6 @@ public class PersonTest {
         for(Person p : people){
             System.out.println(p.getName() + ", " + p.getDescription());
         }
+
     }
 }
