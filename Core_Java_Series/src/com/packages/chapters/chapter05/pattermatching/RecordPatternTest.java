@@ -18,6 +18,6 @@ public class RecordPatternTest {
             case Point(var __, var y) when y== 0 -> "on y-axis";
                 default -> "not on either axis";
         };
-        System.out.println("%s %s%n", p, description);
+        //System.out.println("%s %s%n", p, description);
     }
 }

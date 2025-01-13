@@ -13,7 +13,7 @@ public class TypePatternTest {
 
         String description = switch (e){
             case Executive exec when exec.getTitle().length() >= 20 -> "An executive with an impressive title";
-            case Executive exc -> "An executive with a title of " + exec.getTitle();
+            case Executive exec -> "An executive with a title of " + exec.getTitle();
             case Manager m -> {
                 m.setBonus(10000);
                 yield "A manager who just got a bonus";
