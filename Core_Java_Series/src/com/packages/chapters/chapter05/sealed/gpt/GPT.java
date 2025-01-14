@@ -18,7 +18,7 @@ final class JSONArray extends ArrayList<JSONValue> implements JSONValue {}
 
 final class JSONObject extends HashMap<String, JSONValue> implements JSONValue {
     public String toString() {
-        StringBuilder result = new StringBuilder();
+        StringBuilder result = new StringBuilder();//
         result.append("{");
         for (Map.Entry<String, JSONValue> entry : entrySet()) {
             if (result.length() > 1) result.append(",");
