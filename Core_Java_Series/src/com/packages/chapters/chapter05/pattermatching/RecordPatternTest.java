@@ -16,8 +16,8 @@ public class RecordPatternTest {
             case Point(var x, var y) when x== 0 && y== 0 -> "origin";
             case Point(var x, var __) when x== 0 -> "on x-axis";
             case Point(var __, var y) when y== 0 -> "on y-axis";
-                default -> "not on either axis";
+                default -> "not on either axis";//check
         };
-        //System.out.println("%s %s%n", p, description);
+        System.out.printf("%s %s%n", p, description);
     }
 }
