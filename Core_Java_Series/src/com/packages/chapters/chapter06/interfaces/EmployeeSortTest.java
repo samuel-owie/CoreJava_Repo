@@ -19,7 +19,7 @@ public class EmployeeSortTest {
 
         //Print out information about all Employee objects
         for (Employee e : staff){
-            System.out.printf("name= " + e.getName() + ", salary= " + e.getSalary());
+            System.out.printf(" name= " + e.getName() + ", salary= " + e.getSalary());
         }
     }
 }
