@@ -3,7 +3,7 @@ package com.packages.chapters.chapter06.interfaces;
 import java.util.*;
 /**
  * This program demonstrates enumerated classes.
- * @version 1.0 11.01.2025
+ * @version 1.0 18.01.2025
  * @author Samuel Owie
  */
 
