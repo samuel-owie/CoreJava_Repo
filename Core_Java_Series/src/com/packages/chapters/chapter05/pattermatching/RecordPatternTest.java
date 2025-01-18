@@ -6,7 +6,7 @@ public class RecordPatternTest {
     public static void main(String[] args){
         int r = (int)(4 * Math.random());
         Point p = switch(r){
-            case 0 -> new Point(0, 0);
+            case 0 -> new Point(0, 0);//
             case 1 -> new Point(1, 0);
             case 2 -> new Point(0, 1);
             default -> new Point(1, 1);
