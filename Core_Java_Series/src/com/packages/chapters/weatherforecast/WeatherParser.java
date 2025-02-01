@@ -1,26 +1,20 @@
 package com.packages.chapters.weatherforecast;
 
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
-import java.io.StringReader;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class WeatherParser {
     public static WeatherData parse(String jsonResponse) {
-        JsonReader jsonReader = Json.createReader(new StringReader(jsonResponse));
-        JsonObject jsonObject = jsonReader.readObject();
-        jsonReader.close();
-
-        String city = jsonObject.getString("name");
-        JsonObject main = jsonObject.getJsonObject("main");
-        double temp = main.getJsonNumber("temp").doubleValue();
-        double feelsLike = main.getJsonNumber("feels_like").doubleValue();
-        int humidity = main.getInt("humidity");
-        String weather = jsonObject.getJsonArray("weather")
-                .getJsonObject(0)
-                .getString("description");
+        JsonObject jsonObject = JsonParser.parseString(jsonResponse).getAsJsonObject();
+        String city = jsonObject.get("name").getAsString();
+        JsonObject main = jsonObject.getAsJsonObject("main");
+        double temp = main.get("temp").getAsDouble();
+        double feelsLike = main.get("feels_like").getAsDouble();
+        int humidity = main.get("humidity").getAsInt();
+        String weather = jsonObject.getAsJsonArray("weather").get(0).getAsJsonObject().get("description").getAsString();
 
         return new WeatherData(city, temp, feelsLike, humidity, weather);
     }
 }
+
 
