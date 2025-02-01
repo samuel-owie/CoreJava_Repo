@@ -13,6 +13,6 @@ public class WeatherParser {
         int humidity = main.get("humidity").getAsInt();
         String weather = jsonObject.getAsJsonArray("weather").get(0).getAsJsonObject().get("description").getAsString();
 
-        return new WeatherData(city, temp, feelsLike, humidity, weather);
+        return new WeatherData(city, temp, feelsLike, humidity, weather); //check
     }
 }
