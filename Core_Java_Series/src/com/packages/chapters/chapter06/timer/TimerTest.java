@@ -17,6 +17,6 @@ public class TimerTest {
         var listener = new TimePrinter();
 
         //construct a timer that calls the listener once every second
-        var timer = new Timer(1000, listener);
+        var timer = new Timer(1000, listener());
     }
 }
