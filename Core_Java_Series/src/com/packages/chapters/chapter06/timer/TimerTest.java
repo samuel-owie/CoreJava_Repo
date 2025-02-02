@@ -6,9 +6,6 @@ package com.packages.chapters.chapter06.timer;
  * @author Samuel Owie
  */
 
-import java.awt.*;
-import java.awt.event.*;
-import java.time.*;
 import javax.swing.*;
 
 public class TimerTest {
@@ -17,6 +14,10 @@ public class TimerTest {
         var listener = new TimePrinter();
 
         //construct a timer that calls the listener once every second
-        var timer = new Timer(1000, listener());
+        var timer = new Timer(1000, listener);
+        timer.start();
+
+        //Keep program running until the user selects "OK"
+        JOptionPane.showMessageDialog(null, "Quit program?");
     }
 }
