@@ -19,5 +19,6 @@ public class TimerTest {
 
         //Keep program running until the user selects "OK"
         JOptionPane.showMessageDialog(null, "Quit program?");
+        System.exit(0);
     }
 }
