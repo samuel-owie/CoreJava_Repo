@@ -10,5 +10,6 @@ public class CloneTest {
 
     public static void main(String[] args) throws CloneNotSupportedException{
         var original = new Employee("John Q. Public", 5000);
+
     }
 }
